@@ -71,7 +71,9 @@ body {
 
 .tweetHandle {
   color: #828282;
-  font-weight: normal;
+  font-weight: normal !important; 
+  font-size: 0.95em !important;
+  
 }
 
 .user-stats {
