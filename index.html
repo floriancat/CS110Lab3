@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Twitter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+
+      <div class="collapse navbar-collapse w-100 order-1 order-md-0 dual-collapse2" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link leftSide" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link leftSide" href="#moments">Moments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link leftSide" href="#notifications">Notifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link leftSide" href="#messages">Messages</a>
+          </li>
+        </ul>
+      </div>
+
+      <a href="#centerFeed" style="position: absolute; transform: translateY(200%); display: none;"> Jump to Twitter feed </a>
+
+      <div class="mx-auto order-2"> 
+        <a> <img src="images/twitter-logo.png" width="30" height="25"> </a>
+      </div>
+
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto"> 
+          <li class="nav-item"> 
+            <button type="button" class="btn tweetButton">Tweet</button> <!-- <a class="nav-link tweetButton" href="#tweet">Tweet</a> -->
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+
+
+    <div class="flex container">
+      <div class="side-boxes outerSquares">
+        <img src="./images/ratatouille-banner.png" class="banner" alt="Remy profile banner">
+        <img src="./images/ratatouille.jpg" class="profile-picture" alt="Remy profile picture">
+          <div class="user-info"><div class="user-name">Remy</div><div class="user-handle">@remy</div></div>
+        <div class="flex user-stats">
+          <p>Tweets<span class="colored-stats"><br>5049</span></p>
+          <p>Following<span class="colored-stats"><br>324</span></p>
+          <p>Followers<span class="colored-stats"><br>809</span></p>
+        </div>
+      </div>
+
+      <div class="side-boxes centerFeed" role="main">
+        <div>
+          <div class="tweets flexTweet">
+            <div class="tweetPicContainer">
+              <img class="tweetPic" src="images/ratatouille.jpg" alt="Remy profile picture">
+            </div>
+                <div class="tweetContentContainer"> 
+                    <p class="user-name tweetName">Remy <span class="tweetHandle">@remy Nov 16</span> </p> 
+                    <p class="tweetText">I'm taking this class called CS 110 and the TAs are all so cool!</p> 
+                </div>
+          </div> 
+
+            <div class="tweets flexTweet">
+              <div class="tweetPicContainer">
+                <img class="tweetPic" src="images/ratatouille.jpg" alt="Remy profile picture">
+              </div>
+                  <div class="tweetContentContainer"> 
+                      <p class="user-name tweetName">Remy <span class="tweetHandle">@remy Nov 16</span> </p> 
+                      <p class="tweetText">It's 2007. You just got home from elementary school. Your mom has pizza bagels in the oven. Ratatouille is in theaters. Life is good</p> 
+                  </div>
+            </div> 
+
+            <div class="tweets flexTweet">
+              <div class="tweetPicContainer">
+                <img class="tweetPic" src="images/ratatouille.jpg" alt="Remy profile picture">
+              </div>
+                  <div class="tweetContentContainer"> 
+                      <p class="user-name tweetName">Remy <span class="tweetHandle">@remy Nov 16</span> </p> 
+                      <p class="tweetText">Let's make some pasta!</p> 
+                  </div>
+            </div> 
+
+            <div class="tweets flexTweet">
+              <div class="tweetPicContainer">
+                <img class="tweetPic" src="images/ratatouille.jpg" alt="Remy profile picture">
+              </div>
+                  <div class="tweetContentContainer"> 
+                      <p class="user-name tweetName">Remy <span class="tweetHandle">@remy Nov 16</span> </p> 
+                      <p class="tweetText">Let's make some pasta!</p> 
+                  </div>
+            </div> 
+
+            <div class="tweets flexTweet"> 
+                <div class="tweetPicContainer">
+                  <img class="tweetPic" src="images/ratatouille.jpg" alt="Remy profile picture">
+                </div>
+                    <div class="tweetContentContainer"> 
+                        <p class="user-name tweetName">Remy <span class="tweetHandle">@remy Nov 16</span> </p> 
+                        <p class="tweetText">Let's make some pasta!</p> 
+                    </div>
+            </div>
+
+            <div class="tweets flexTweet">
+              <div class="tweetPicContainer">
+                <img class="tweetPic" src="images/ratatouille.jpg" alt="Remy profile picture">
+              </div>
+                  <div class="tweetContentContainer"> 
+                      <p class="user-name tweetName">Remy <span class="tweetHandle">@remy Nov 16</span> </p> 
+                      <p class="tweetText">Anyone can cook!</p> 
+                  </div>
+            </div> 
+
+            <div class="tweets flexTweet">
+              <div class="tweetPicContainer">
+                <img class="tweetPic" src="images/ratatouille.jpg" alt="Remy profile picture">
+              </div>
+                  <div class="tweetContentContainer"> 
+                      <p class="user-name tweetName">Remy <span class="tweetHandle">@remy Nov 16</span> </p> 
+                      <p class="tweetText">I really enjoyed the film Ratatouille starring... me! Your old pal Remy. You join me on my adventure to finding the joy of cooking and realizing my dream.</p> 
+                  </div>
+            </div> 
+
+            <div class="tweets flexTweet">
+              <div class="tweetPicContainer">
+                <img class="tweetPic" src="images/ratatouille.jpg" alt="Remy profile picture">
+              </div>
+                  <div class="tweetContentContainer"> 
+                      <p class="user-name tweetName">Remy <span class="tweetHandle">@remy Nov 16</span> </p> 
+                      <p class="tweetText">I'm not ordinary rat! Hit up my pal Mickey! He can tell ya all about me and our rodent ways!</p> 
+                  </div>
+            </div> 
+
+            <div class="tweets flexTweet">
+              <div class="tweetPicContainer">
+                <img class="tweetPic" src="images/ratatouille.jpg" alt="Remy profile picture">
+              </div>
+                  <div class="tweetContentContainer"> 
+                      <p class="user-name tweetName">Remy <span class="tweetHandle">@remy Nov 16</span> </p> 
+                      <p class="tweetText">Follow my friend Linguini! He let me control him to first start cooking! I'll never forget those days. Ah. Chilling in his hat, cutting up onions. The life.</p> 
+                  </div>
+            </div> 
+
+        </div>
+      </div>
+
+      <div class="side-boxes outerSquares dynamic-width content-right"> 
+        <div class="suggestion-header">Who To Follow</div>
+        <div class="flex-suggestions">
+          <img src="./images/linguini.png" class="profile-picture" style="left: 0; top: 15px;" alt="Linguini profile picture">
+          <div class="suggestion-info" style="font-weight: bold;">
+            Linguini <span class="user-handle">@linguini</span>
+            <div><button type="button" class="follow-button">Follow</button></div>
+          </div>
+        </div>
+        <hr>
+        <div class="flex-suggestions">
+          <img src="./images/ratatouille.jpg" class="profile-picture" style="left: 0; top: 15px;" alt="Linguini profile picture">
+          <div class="suggestion-info" style="font-weight: bold;">
+            CS110 TA <span class="user-handle">@cs</span>
+            <div><button type="button" class="follow-button">Follow</button></div>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+
+    <!-- TODO: Create HTML elements for Twitter mockup inside body -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

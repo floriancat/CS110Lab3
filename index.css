@@ -1,0 +1,213 @@
+/* Feel free to edit CSS of body if you'd like. We provide you the light gray background color and font family in the body styling */
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  background-color: #e6ecf0;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start !important;
+}
+
+.container {
+  max-width: 1190px;
+  margin: 56px auto;
+}
+
+.side-boxes {
+  width: 290px;
+  background-color: white;
+}
+
+.banner {
+  width: 290px;
+  border: 40px solid black;
+  z-index: 1;
+}
+
+.profile-picture {
+  width: 70px;
+  height: 70px;
+  border: 2px solid white;
+  border-radius: 35px;
+  position: relative;
+  top: -25px;
+  left: 15px;
+  z-index: 2;
+}
+
+.user-info {
+  position: relative;
+  top: -65px;
+  left: 100px;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.user-name {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.colored-stats {
+  color: #00aced;
+  line-height: 35px;
+}
+
+.tweetName {
+  margin-left: 5px;
+  font-size: 0.95em;
+  font-weight: bold !important;
+  text-decoration:none !important;
+  margin-bottom: 0px;
+}
+
+.user-handle {
+  color: #828282;
+  font-weight: normal;
+}
+
+.tweetHandle {
+  color: #828282;
+  font-weight: normal;
+}
+
+.user-stats {
+  font-weight: bold;
+  color: #7c7c7c;
+  justify-content: space-evenly;
+  position: relative;
+  top: -35px;
+  height: 50px;
+}
+
+.centerFeed {
+  flex-grow: 0.90;
+}
+
+.flexTweet {
+  display: flex;
+  flex-direction:row;
+  align-content: center;
+  padding: 15px;
+  padding-bottom: 0px;
+}
+.tweets {
+  min-height: 51px !important;
+  border-bottom: 1px solid #e6ecf0;
+}
+.tweetPicContainer {
+  height:inherit;
+  width:55px;
+  /* border:1px solid black; */
+}
+.tweetContentContainer {
+  width: 85%;
+  height:auto;
+  /* border:1px solid grey; */
+}
+
+.tweetPic {
+  border-radius: 50%;
+  width:48px;
+  height:48px;
+  /* margin-left: 5px; */
+}
+
+.tweetText {
+  margin-left: 5px;
+  font-size: .85em;
+}
+
+.leftSide {
+  color: #7a9dae;
+  font-size: 1em;
+  margin-right: 25px;
+  font-weight: bold;
+  position:relative;
+  padding: 0.7em 0.7em;
+}
+
+.leftSide:hover {
+  color: #0091e3 !important;
+}
+
+.leftSide::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #0091e3;
+  color: transparent;
+  width: 0%;
+  content: '.';
+  height: 3px;
+}
+.leftSide:hover::after {
+  width: 100%;
+}
+
+.tweetButton {
+  background-color: #49b3f4;
+  border-radius: 20px;
+  border-width: thin;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 46px;
+  z-index: 100;
+}
+
+.suggestion-header {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.flex-suggestions {
+  display: flex;
+  height: 90px;
+}
+
+.suggestion-info {
+  padding-left: 15px;
+  height: 60px;
+  padding-top: 15px;
+}
+
+.follow-button {
+  margin-top: 10px;
+  border-radius: 15px;
+  background-color: white;
+  border: 1px solid #00aced;
+  color: #00aced;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: bold;
+}
+
+.follow-button:hover {
+  background-color: #00aced;
+  color: white;
+}
+
+.content-right {
+  padding: 15px;
+}
+
+@media (max-width: 1200px) {
+  .dynamic-width {
+    display: none;
+  }
+}
+
+
+/* TODO: Create CSS for your Twitter Mockup */
