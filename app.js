@@ -4,6 +4,9 @@ $(document).ready(function() {
     setInterval(async function() {
         fetch(url)
         .then(res => res.json()) .then(data => {  
+
+            refreshTweets(data);
+            
             // do something with data
             //document.getElementById("tweetText").innerHTML = JSON.stringify(data, null, 4);
             // tweets = JSON.stringify(data, null, 4);
@@ -17,18 +20,18 @@ $(document).ready(function() {
             //     $('.package').html($tweets);
             // });
 
-            for(let i = 0; i < 5; i++) {
-                document.getElementsByClassName("tweetText")[i].innerHTML = data.statuses[i].text;
-                //console.log(data.statuses[i].text);
-                document.getElementsByClassName("user-name tweetName")[i].innerHTML = data.statuses[i].user.name;
-                //console.log(data.statuses[i].user.created_at);
-                var date = data.statuses[i].user.created_at.slice(4,10);
-                //date = date.slice(4, 10);
-                //console.log(date);
-                document.getElementsByClassName("tweetHandle")[i].innerHTML = ' @' + data.statuses[i].user.screen_name + ' ' + date;
-                //console.log(document.getElementsByClassName("tweetHandle")[1].innerHTML);
-                document.getElementsByClassName("tweetPic")[i].src = data.statuses[i].user.profile_image_url;
-            }
+            // for(let i = 0; i < 5; i++) {
+            //     document.getElementsByClassName("tweetText")[i].innerHTML = data.statuses[i].text;
+            //     //console.log(data.statuses[i].text);
+            //     document.getElementsByClassName("user-name tweetName")[i].innerHTML = data.statuses[i].user.name;
+            //     //console.log(data.statuses[i].user.created_at);
+            //     var date = data.statuses[i].user.created_at.slice(4,10);
+            //     //date = date.slice(4, 10);
+            //     //console.log(date);
+            //     document.getElementsByClassName("tweetHandle")[i].innerHTML = ' @' + data.statuses[i].user.screen_name + ' ' + date;
+            //     //console.log(document.getElementsByClassName("tweetHandle")[1].innerHTML);
+            //     document.getElementsByClassName("tweetPic")[i].src = data.statuses[i].user.profile_image_url;
+            // }
             // for(let i = 0; i < 5; i++) {
             //     //document.getElementsByClassName("tweetHandle")[0].innerHTML = data.statuses[0].user.screen_name;
             //     console.log(document.getElementsByClassName("tweetHandle"));
@@ -41,32 +44,76 @@ $(document).ready(function() {
     }, 5000);
 });
 
+var id = [];
+
 const tweetContainer = document.getElementsByClassName("centerFeed");
 function refreshTweets(tweets) {
-    const tweetList = document.createElement("div");
 
-    tweetContainer.appendChild(tweetList);
+    tweetStatus = tweets.statuses;
 
-    for(let i = 0; i < 5; i++) {
-        const tweet = document.createElement("div");
+    tweetStatus.forEach((tweet) => {
+        id.push(tweet.id_str);
+
+        var tweetElement = document.createElement("div");
+        tweetElement.className = 'tweets';
+        var tweetPicdiv = document.createElement("div");
+        const tweetPic = document.createElement("img");
+
+        tweetPic.src = tweet.user.profile_image_url;
+        tweetPic.className = "tweetPic";
+        tweetPicdiv.append(tweetPic);
+        tweetPicdiv.className = "tweetPicContainer";
+        tweetElement.append(tweetPicdiv);
+
+        var tweetContent = document.createElement('div');
+        var name = document.createElement('span');
+        name.appendChild(document.createTextNode(tweet.user.name));
+        name.className = 'user-name tweetName';
+        tweetContent.className = 'tweetContentContainer';
+        tweetContent.append(name);
+
+        var tweetHandle = document.createElement('span');
+        tweetHandle.appendChild(document.createTextNode(' @' + tweet.user.screen_name + ' ' + tweet.user.created_at.slice(4,10)));
+        tweetHandle.className = 'tweetHandle';
+        tweetContent.className = 'tweetContentContainer';
+        tweetContent.append(tweetHandle);
+
+        var textp = document.createElement('p');
+        textp.appendChild(document.createTextNode(tweet.text));
+        textp.className = 'tweetText';
+        tweetElement.append(textp);
+        tweetContent.append(textp);
+        tweetElement.append(tweetContent);
+
+
+        tweetElement.className = 'tweets flexTweet';
+        tweetContainer[0].appendChild(tweetElement);
+    });
+
+    // const tweetList = document.createElement("div");
+
+    // tweetContainer.appendChild(tweetList);
+
+    // for(let i = 0; i < 5; i++) {
+    //     const tweet = document.createElement("div");
         
-        const tweetPicContainer = document.createElement("div");
-        const tweetPic = document.createElement("img")
-        tweetPicContainer.appendChild(tweetPic);
-        tweet.appendChild(tweetPicContainer);
+    //     const tweetPicContainer = document.createElement("div");
+    //     const tweetPic = document.createElement("img")
+    //     tweetPicContainer.appendChild(tweetPic);
+    //     tweet.appendChild(tweetPicContainer);
 
-        const tweetContentContainer = document.createElement("div");
-        const tweetName = document.createElement("span");
-        const tweetHandle = document.createElement("span");
-        const tweetTxt = document.createElement("p");
-        tweetContentContainer.appendChild(tweetTxt);
-        tweetContentContainer.appendChild(tweetName);
-        tweetContentContainer.appendChild(tweetHandle);
-        tweet.appendChild(tweetContentContainer);
+    //     const tweetContentContainer = document.createElement("div");
+    //     const tweetName = document.createElement("span");
+    //     const tweetHandle = document.createElement("span");
+    //     const tweetTxt = document.createElement("p");
+    //     tweetContentContainer.appendChild(tweetTxt);
+    //     tweetContentContainer.appendChild(tweetName);
+    //     tweetContentContainer.appendChild(tweetHandle);
+    //     tweet.appendChild(tweetContentContainer);
 
-        // const tweetTxt = document.createTextNode('Hello');
-        // tweetTxt.className = 'tweetText';
-        // tweet.append(tweetTxt);
+    //     // const tweetTxt = document.createTextNode('Hello');
+    //     // tweetTxt.className = 'tweetText';
+    //     // tweet.append(tweetTxt);
         
-    }
+    // }
 }
