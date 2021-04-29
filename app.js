@@ -1,12 +1,14 @@
 $(document).ready(function() {
     // Specify a url, in this case our web server
     const url = "http://ec2-54-219-224-129.us-west-1.compute.amazonaws.com:2000/feed/random?q=weather"
+    pause = true;
+
     setInterval(async function() {
         fetch(url)
         .then(res => res.json()) .then(data => {  
-
-            refreshTweets(data);
-            
+            if(pause){
+                refreshTweets(data);
+            }
             // do something with data
             //document.getElementById("tweetText").innerHTML = JSON.stringify(data, null, 4);
             // tweets = JSON.stringify(data, null, 4);
