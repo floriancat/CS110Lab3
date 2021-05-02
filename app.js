@@ -47,8 +47,9 @@ $(document).ready(function() {
 });
 
 var id = [];
-
 const tweetContainer = document.getElementsByClassName("centerFeed");
+var flip = [];
+
 function refreshTweets(tweets) {
 
     tweetStatus = tweets.statuses;
@@ -90,34 +91,6 @@ function refreshTweets(tweets) {
 
 
             tweetElement.className = 'tweets flexTweet';
-            tweetContainer[0].appendChild(tweetElement);
         }
     });
-
-    // const tweetList = document.createElement("div");
-
-    // tweetContainer.appendChild(tweetList);
-
-    // for(let i = 0; i < 5; i++) {
-    //     const tweet = document.createElement("div");
-        
-    //     const tweetPicContainer = document.createElement("div");
-    //     const tweetPic = document.createElement("img")
-    //     tweetPicContainer.appendChild(tweetPic);
-    //     tweet.appendChild(tweetPicContainer);
-
-    //     const tweetContentContainer = document.createElement("div");
-    //     const tweetName = document.createElement("span");
-    //     const tweetHandle = document.createElement("span");
-    //     const tweetTxt = document.createElement("p");
-    //     tweetContentContainer.appendChild(tweetTxt);
-    //     tweetContentContainer.appendChild(tweetName);
-    //     tweetContentContainer.appendChild(tweetHandle);
-    //     tweet.appendChild(tweetContentContainer);
-
-    //     // const tweetTxt = document.createTextNode('Hello');
-    //     // tweetTxt.className = 'tweetText';
-    //     // tweet.append(tweetTxt);
-        
-    // }
 }
