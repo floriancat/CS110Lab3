@@ -41,7 +41,9 @@
       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto"> 
           <li class="nav-item"> 
-            <button type="button" class="btn tweetButton">Tweet</button> <!-- <a class="nav-link tweetButton" href="#tweet">Tweet</a> -->
+            <input onkeyup="searchTweets()" id="searchBar" type="text" placeholder="Search in Tweets..."> 
+            <button type="button" onclick="pause=!pause" class="btn tweetButton">Pause</button> <!-- <a class="nav-link tweetButton" href="#tweet">Tweet</a> -->
+            <button type="button" class="btn tweetButton">Tweet</button>
           </li>
         </ul>
       </div>
@@ -62,7 +64,7 @@
       </div>
 
       <div class="side-boxes centerFeed" role="main">
-        <div>
+        <!-- <div>
           <div class="tweets flexTweet">
             <div class="tweetPicContainer">
               <img class="tweetPic" src="images/ratatouille.jpg" alt="Remy profile picture">
@@ -115,7 +117,7 @@
 
             
 
-        </div>
+        </div> -->
       </div>
 
       <div class="side-boxes outerSquares dynamic-width content-right"> 
