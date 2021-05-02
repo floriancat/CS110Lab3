@@ -24,6 +24,22 @@ const handleSearch = event => {
     refreshTweets(searchString);
 }
 
+function searchTweets() {
+    var input = document.getElementById('searchBar')
+    var filter = input.value.toLowerCase();
+    var tweets = document.getElementsByClassName('tweets flexTweet')
+
+    for(var i = 0; i < tweets.length; i++){
+        var a = tweets[i].getElementsByClassName('tweetText')[0];
+        var txtValue = a.textContent || a.innerText;
+        if(txtValue.toLowerCase().indexOf(filter) > -1) {
+            tweets[i].style.display = "";
+        } else {
+            tweets[i].style.display = "none";
+        }
+    }
+}
+
 var id = [];
 const tweetContainer = document.getElementsByClassName("centerFeed");
 var flip = [];
