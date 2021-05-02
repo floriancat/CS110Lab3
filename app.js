@@ -89,8 +89,8 @@ function refreshTweets(tweets) {
             //tweetContainer[0].appendChild(tweetElement);
         }
         console.log(tweetArr.length);
-        for(var i = 0; i < tweetArr.length; i++){
-            tweetList.appendChild(tweetArr[i]);
-        }
     });
+    for(var i = tweetArr.length-1; i >= 0; i--){
+        tweetList.appendChild(tweetArr[i]);
+    }
 }
