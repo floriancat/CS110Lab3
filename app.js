@@ -7,6 +7,7 @@ $(document).ready(function() {
         fetch(url)
         .then(res => res.json()) .then(data => {  
             if(pause){
+                document.getElementById("searchBar").addEventListener("input", handleSearch);
                 refreshTweets(data);
             }
         })
@@ -17,13 +18,25 @@ $(document).ready(function() {
     }, 5000);
 });
 
+const handleSearch = event => {
+    searchString = event.target.value.trim().toLowerCase();
+}
+
 var id = [];
 const tweetContainer = document.getElementsByClassName("centerFeed");
 var flip = [];
+var tweetArr = [];
 
 function refreshTweets(tweets) {
-
     tweetStatus = tweets.statuses;
+    //console.log(tweetContainer[0].firstChild);
+
+    while (tweetContainer.firstChild){
+        tweetContainer[0].removeChild(tweetContainer[0].firstChild);
+    }
+
+    const tweetList = document.createElement("div");
+    tweetContainer[0].appendChild(tweetList);
 
     tweetStatus.forEach((tweet) => {
         if(!id.includes(tweet.id_str)){
@@ -34,7 +47,16 @@ function refreshTweets(tweets) {
             var tweetPicdiv = document.createElement("div");
             const tweetPic = document.createElement("img");
 
+            //tweetPic.src = 'images/ratatouille.jpg';
+            //console.log(tweet.user.profile_image_url);
             tweetPic.src = tweet.user.profile_image_url;
+            
+            tweetPic.src.onerror = function () {
+                console.log('Yo');
+                this.onerror = null;
+                this.src = 'images/ratatouille.jpg'
+            };
+            
             tweetPic.className = "tweetPic";
             tweetPicdiv.append(tweetPic);
             tweetPicdiv.className = "tweetPicContainer";
@@ -62,6 +84,13 @@ function refreshTweets(tweets) {
 
 
             tweetElement.className = 'tweets flexTweet';
+            tweetArr.push(tweetElement);
+            //tweetList.appendChild(tweetElement);
+            //tweetContainer[0].appendChild(tweetElement);
+        }
+        console.log(tweetArr.length);
+        for(var i = 0; i < tweetArr.length; i++){
+            tweetList.appendChild(tweetArr[i]);
         }
     });
 }
