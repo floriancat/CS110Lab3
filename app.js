@@ -9,35 +9,6 @@ $(document).ready(function() {
             if(pause){
                 refreshTweets(data);
             }
-            // do something with data
-            //document.getElementById("tweetText").innerHTML = JSON.stringify(data, null, 4);
-            // tweets = JSON.stringify(data, null, 4);
-            //console.log(data);
-            //console.log(data.statuses[0].user.screen_name);
-            //console.log(document.getElementsByClassName("tweetText"));
-            //var tN = document.getElementsByClassName("tweetHandle");
-
-            // $(function(){
-            //     var $tweets = $('.tweets').clone();
-            //     $('.package').html($tweets);
-            // });
-
-            // for(let i = 0; i < 5; i++) {
-            //     document.getElementsByClassName("tweetText")[i].innerHTML = data.statuses[i].text;
-            //     //console.log(data.statuses[i].text);
-            //     document.getElementsByClassName("user-name tweetName")[i].innerHTML = data.statuses[i].user.name;
-            //     //console.log(data.statuses[i].user.created_at);
-            //     var date = data.statuses[i].user.created_at.slice(4,10);
-            //     //date = date.slice(4, 10);
-            //     //console.log(date);
-            //     document.getElementsByClassName("tweetHandle")[i].innerHTML = ' @' + data.statuses[i].user.screen_name + ' ' + date;
-            //     //console.log(document.getElementsByClassName("tweetHandle")[1].innerHTML);
-            //     document.getElementsByClassName("tweetPic")[i].src = data.statuses[i].user.profile_image_url;
-            // }
-            // for(let i = 0; i < 5; i++) {
-            //     //document.getElementsByClassName("tweetHandle")[0].innerHTML = data.statuses[0].user.screen_name;
-            //     console.log(document.getElementsByClassName("tweetHandle"));
-            // }
         })
         .catch(err => {
             // error catching
