@@ -21,7 +21,7 @@ $(document).ready(function() {
 const handleSearch = event => {
     searchString = event.target.value.trim().toLowerCase();
     console.log(searchString);
-    refreshTweets(searchString);
+    //refreshTweets(searchString);
 }
 
 function searchTweets() {
@@ -68,12 +68,17 @@ function refreshTweets(tweets) {
             //tweetPic.src = 'images/ratatouille.jpg';
             //console.log(tweet.user.profile_image_url);
             tweetPic.src = tweet.user.profile_image_url;
+
+            if(!URLError(tweet.user.profile_image_url)){
+                tweetPic.src = 'images/ratatouille.jpg';
+            }
             
-            tweetPic.src.onerror = function () {
-                console.log('Yo');
-                this.onerror = null;
-                this.src = 'images/ratatouille.jpg'
-            };
+            function URLError(url){
+                var http = new XMLHttpRequest();
+                http.open('HEAD', url, false);
+                http.send();
+                return (http.status != 404);
+            }
             
             tweetPic.className = "tweetPic";
             tweetPicdiv.append(tweetPic);
@@ -110,6 +115,6 @@ function refreshTweets(tweets) {
     });
     for(var i = tweetArr.length-1; i >= 0; i--){
         tweetList.appendChild(tweetArr[i]);
-        console.log(tweetArr[i]);
+        //console.log(tweetArr[i]);
     }
 }
