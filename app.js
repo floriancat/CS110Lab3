@@ -20,6 +20,8 @@ $(document).ready(function() {
 
 const handleSearch = event => {
     searchString = event.target.value.trim().toLowerCase();
+    console.log(searchString);
+    refreshTweets(searchString);
 }
 
 var id = [];
@@ -88,9 +90,10 @@ function refreshTweets(tweets) {
             //tweetList.appendChild(tweetElement);
             //tweetContainer[0].appendChild(tweetElement);
         }
-        console.log(tweetArr.length);
+        //console.log(tweetArr.length);
     });
     for(var i = tweetArr.length-1; i >= 0; i--){
         tweetList.appendChild(tweetArr[i]);
+        console.log(tweetArr[i]);
     }
 }
